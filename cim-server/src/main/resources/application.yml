@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: cim-server
+# 是否注册zk
+app:
+  zk:
+    switch: true
+    addr: 127.0.0.1:2181
+    connect:
+      timeout: 15000
+    # zk 注册根节点
+    root: /route
+server:
+  port: 8081
+# 清除路由信息
+cim:
+  clear:
+    route:
+      request:
+        url: http://localhost:8083/offLine
+# 检测多少秒没有收到客户端心跳后服务端关闭连接
+  heartbeat:
+    time: 30
+  server:
+    port: 11211
